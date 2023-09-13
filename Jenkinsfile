@@ -3,7 +3,6 @@ pipeline {
   environment {
     registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
-    registryCredential = 'dockerhub'
     dockerImage = ""
          
     
