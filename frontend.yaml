@@ -16,7 +16,7 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: 10.138.0.3:5001/mathewmath/flask:${BUILD_NUMBER}
+    - image: /mathewmath/flask:${BUILD_NUMBER}
       name: frontend
 
 ---
