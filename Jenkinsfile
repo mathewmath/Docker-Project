@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "mathew/flask"
+    registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
     dockerImage = ""
     
