@@ -28,8 +28,8 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "" ) {
-            dockerImage.push("mathewmath/flask")
+          docker.withRegistry(url[https://hub.docker.com/u/mathewmath]  ) {
+            dockerImage.push("registry")
           }
         }
       }
