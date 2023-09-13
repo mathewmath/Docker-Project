@@ -43,7 +43,7 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-         withDockerRegistry([ credentialsId: "dockerhub" , url: "" ]) {
+         withDockerRegistry([ credentialsId: "dockerhub" , url: "" ])
               sh 'docker build -t "mathewmath/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
               sh 'docker push "mathewmath/mysql:$BUILD_NUMBER"'
           }
