@@ -28,7 +28,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          withCredentials([file(credentialsId: 'dockerhub')]) {
             dockerImage.push("mathewmath/flask")
           }
         }
