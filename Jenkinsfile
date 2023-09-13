@@ -4,8 +4,7 @@ pipeline {
     registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
     dockerImage = ""
-         
-    }
+      }
 
   agent any
     stages {
@@ -45,7 +44,6 @@ pipeline {
    stage('Build mysql image') {
      steps{
          sh 'docker build -t "mathewmath/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-       withDockerRegistry([ credentialsId: "dockerhub" ])
          sh 'docker push "mathewmath/mysql:$BUILD_NUMBER"'
           }
       }
