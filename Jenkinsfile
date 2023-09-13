@@ -4,6 +4,7 @@ pipeline {
     registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
     dockerImage = ""
+    registryCredential = 'dockerhub'
       
     
   }
@@ -28,7 +29,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          registryUrl 'https://hub.docker.com/u/mathewmath' {
+          docker.withRegistry( '', registryCredential ) {
             dockerImage.push("")
           }
         }
