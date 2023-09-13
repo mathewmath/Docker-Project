@@ -4,7 +4,7 @@ pipeline {
     registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
     dockerImage = ""
-      }
+  }
 
   agent any
     stages {
@@ -27,8 +27,7 @@ pipeline {
       steps{
         script {
           withDockerRegistry([ credentialsId: "dockerhub" ])  { 
-            dockerImage.push("registry")
-          
+            dockerImage.push()
           }
         }
       }
@@ -43,9 +42,9 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-        sh 'docker build -t "mathewmath/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-         sh 'docker push "mathewmath/mysql:$BUILD_NUMBER"'
-          }
+       sh 'docker build -t "mathewmath/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "mathewmath/mysql:$BUILD_NUMBER"'
+        }
       }
     stage('Deploy App') {
       steps {
