@@ -28,7 +28,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry(withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'mathewmath', passwordVariable: 'Omathokimos@123')]) {
+          docker.withRegistry( "" ) { {
             dockerImage.push("mathewmath/flask")
           }
         }
