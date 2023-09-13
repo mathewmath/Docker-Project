@@ -29,7 +29,7 @@ pipeline {
       steps{
         script {
           registryUrl 'https://hub.docker.com/u/mathewmath' {
-            dockerImage.push("registry")
+            dockerImage.push("mathewmath/flask")
           }
         }
       }
