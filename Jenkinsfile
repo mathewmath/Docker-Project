@@ -29,7 +29,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( "" ) {
-            dockerImage.push("mathewmath/flask")
+            dockerImage.push("dockerhub")
           }
         }
       }
