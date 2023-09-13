@@ -47,7 +47,7 @@ pipeline {
         withDockerRegistry([ credentialsId: "dockerhub" ])
         sh 'docker build -t "mathewmath/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
         sh 'docker push "mathewmath/mysql:$BUILD_NUMBER"'
-               }
+         }
       }
     stage('Deploy App') {
       steps {
