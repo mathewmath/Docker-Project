@@ -4,7 +4,7 @@ pipeline {
     registry = "mathewmath/flask"
     registry_mysql = "mathewmath/mysql"
     dockerImage = ""
-    registryCredential = 'Omathokimos@123'  
+      
     
   }
 
