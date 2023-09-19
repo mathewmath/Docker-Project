@@ -16,8 +16,8 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: docker.io/mathewmath/flask:${BUILD_NUMBER}
-      name: frontend
+    - image: docker.io/mathewmath/flask:177
+    name: frontend
 
 ---
 apiVersion: apps/v1
@@ -49,7 +49,7 @@ spec:
           run: backend
      spec:
         containers:
-        - image: docker.io/mathewmath/mysql:${BUILD_NUMBER}
+        - image: docker.io/mathewmath/mysql:177
           imagePullPolicy: IfNotPresent
           args: ["--default-authentication-plugin=mysql_native_password"]
           name: backend
