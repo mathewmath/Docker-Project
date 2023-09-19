@@ -71,7 +71,7 @@ metadata:
   namespace: default
 spec:
   ports:
-  - nodePort: 32335
+  - nodePort: 32333
     port: 8080
     protocol: TCP
     targetPort: 8080
@@ -89,9 +89,9 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 3307
+  - port: 3306
     protocol: TCP
-    targetPort: 3307
+    targetPort: 3306
   selector:
     run: backend
   sessionAffinity: None
