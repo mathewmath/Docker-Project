@@ -61,7 +61,9 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "frontend.yaml", kubeconfigId: "kube")
+           withKubeConfig([credentialsId: 'kube']) {
+          sh 'kubectl apply -f frontend.yaml'
+           }
         }
       }
     }
