@@ -16,7 +16,7 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: hub.docker.com/mathewmath/flask:185
+    - image: hub.docker.com/mathewmath/flask:188
       name: frontend
 
 ---
@@ -49,7 +49,7 @@ spec:
           run: backend
      spec:
         containers:
-        - image: hub.docker.com/mathewmath/mysql:$185
+        - image: hub.docker.com/mathewmath/mysql:$188
           imagePullPolicy: IfNotPresent
           args: ["--default-authentication-plugin=mysql_native_password"]
           name: backend
